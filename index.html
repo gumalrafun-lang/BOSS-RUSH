@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Rush</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game">
+    <canvas id="gameCanvas" width="1200" height="700"></canvas>
+    <div id="ui"></div>
+
+    <div id="skillUI">
+        <div class="skillBox" id="skillQ">
+            <div class="skillKey">Q</div>
+            <div class="skillName">GRENADE</div>
+            <div id="skillQTimer" class="skillTimer">READY</div>
+        </div>
+        <div class="skillBox" id="skillE">
+            <div class="skillKey">E</div>
+            <div class="skillName">FREEZE</div>
+            <div id="skillETimer" class="skillTimer">READY</div>
+        </div>
+        <div class="skillBox" id="skillShift">
+            <div class="skillKey">SHIFT</div>
+            <div class="skillName">DASH</div>
+            <div id="skillShiftTimer" class="skillTimer">READY</div>
+        </div>
+        <div class="skillBox ultimateBox" id="skillF">
+            <div class="skillKey">F</div>
+            <div class="skillName">OVERDRIVE</div>
+            <div class="ultimateBar"><div id="skillFProgress"></div></div>
+            <div id="skillFTimer" class="skillTimer">0/800</div>
+        </div>
+    </div>
+
+    <div id="ultimateTimer"></div>
+
+    <div id="upgradeScreen" class="hidden">
+        <div class="upgradePanel">
+            <h1>UPGRADE</h1>
+            <p>보스를 처치했다! 업그레이드를 하나 선택하세요.</p>
+            <div id="upgradeOptions">
+                <div class="upgradeCard" data-upgrade="damage">
+                    <div class="upgradeIcon">🔫</div>
+                    <h2>DAMAGE UP</h2>
+                    <p>총알 공격력 +5</p>
+                </div>
+                <div class="upgradeCard" data-upgrade="hp">
+                    <div class="upgradeIcon">❤️</div>
+                    <h2>MAX HP UP</h2>
+                    <p>최대 체력 +100</p>
+                </div>
+                <div class="upgradeCard" data-upgrade="fireRate">
+                    <div class="upgradeIcon">⚡</div>
+                    <h2>FIRE RATE UP</h2>
+                    <p>발사 속도 증가</p>
+                </div>
+            </div>
+            <button id="nextBossButton" class="hidden">NEXT BOSS</button>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

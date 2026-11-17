@@ -1,0 +1,33 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%}
+body{background:#05080d;overflow:hidden;font-family:Arial,sans-serif;color:#fff}
+#game{position:fixed;inset:0;width:100vw;height:100vh;margin:0;overflow:hidden;background:#05080d}
+#gameCanvas{position:absolute;left:0;top:0;width:100%;height:100%;display:block}
+#ui{display:none}
+#skillUI{position:absolute;left:50%;bottom:25px;transform:translateX(-50%);z-index:20;display:flex;gap:10px;align-items:flex-end;pointer-events:none}
+.skillBox{position:relative;width:82px;height:88px;background:linear-gradient(145deg,rgba(25,35,48,.96),rgba(7,12,19,.96));border:2px solid rgba(150,170,190,.45);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;box-shadow:0 5px 20px rgba(0,0,0,.5)}
+.skillKey{position:absolute;top:5px;left:7px;font-size:13px;font-weight:bold;color:#fff;opacity:.8}
+.skillName{margin-top:8px;font-size:10px;font-weight:bold;color:#cbd5df;text-align:center}
+.skillTimer{font-size:12px;font-weight:bold;color:#55e6ff}
+.ultimateBox{width:105px;border-color:rgba(0,220,255,.55);box-shadow:0 0 20px rgba(0,200,255,.12)}
+.ultimateBox .skillKey{color:#00eaff}
+.ultimateBar{width:82px;height:7px;margin-top:3px;overflow:hidden;background:rgba(0,0,0,.6);border-radius:5px}
+#skillFProgress{width:0%;height:100%;background:#00dfff;border-radius:5px;transition:width .1s linear}
+#ultimateTimer{position:absolute;left:50%;top:25px;transform:translateX(-50%);z-index:20;color:#00eaff;font-size:22px;font-weight:bold;text-shadow:0 0 10px rgba(0,220,255,.8);pointer-events:none}
+#upgradeScreen{position:absolute;left:0;top:0;width:100%;height:100%;z-index:100;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.78);backdrop-filter:blur(7px)}
+#upgradeScreen.hidden{display:none}
+.upgradePanel{width:min(900px,90vw);padding:35px;text-align:center;background:linear-gradient(145deg,rgba(20,29,41,.98),rgba(6,10,16,.98));border:1px solid rgba(100,210,255,.35);border-radius:18px;box-shadow:0 0 60px rgba(0,0,0,.8),0 0 30px rgba(0,180,255,.08)}
+.upgradePanel h1{font-size:42px;margin-bottom:10px;color:#fff;letter-spacing:4px}
+.upgradePanel>p{color:#aebdca;margin-bottom:30px;font-size:16px}
+#upgradeOptions{display:flex;justify-content:center;gap:18px}
+.upgradeCard{width:240px;min-height:190px;padding:22px;cursor:pointer;background:linear-gradient(145deg,rgba(35,47,61,.95),rgba(12,18,26,.95));border:2px solid rgba(130,150,170,.3);border-radius:14px;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+.upgradeCard:hover{transform:translateY(-8px);border-color:#00dfff;box-shadow:0 0 25px rgba(0,220,255,.2)}
+.upgradeCard.selected{transform:translateY(-8px);border-color:#00eaff;box-shadow:0 0 35px rgba(0,220,255,.3)}
+.upgradeCard.disabled{opacity:.35;pointer-events:none}
+.upgradeIcon{font-size:38px;margin-bottom:10px}
+.upgradeCard h2{font-size:18px;margin-bottom:12px;color:#fff}
+.upgradeCard p{color:#9caeba;font-size:14px}
+#nextBossButton{margin-top:30px;padding:14px 40px;border:none;border-radius:8px;background:#00cfee;color:#031017;font-size:16px;font-weight:bold;cursor:pointer;transition:transform .15s ease,background .15s ease,box-shadow .15s ease}
+#nextBossButton:hover{transform:translateY(-2px);background:#4deaff;box-shadow:0 0 25px rgba(0,220,255,.4)}
+#nextBossButton.hidden{display:none}
+@media(max-width:700px){#ui{top:10px;left:10px;font-size:14px;min-width:170px;padding:8px 12px}#skillUI{bottom:10px;gap:5px}.skillBox{width:65px;height:70px}.ultimateBox{width:80px}.skillName{font-size:8px}.skillTimer{font-size:10px}.ultimateBar{width:60px}.upgradePanel{padding:20px}.upgradePanel h1{font-size:30px}#upgradeOptions{flex-direction:column;align-items:center;gap:10px}.upgradeCard{width:min(300px,80vw);min-height:120px;padding:15px}.upgradeIcon{font-size:25px}}
